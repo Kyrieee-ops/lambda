@@ -32,4 +32,5 @@ NotionIntegrationの作成は以下記事を参照
 - https://tektektech.com/notion-api/#Notionintegration
 
 参考記事
-- https://zenn.dev/ysksatoo/articles/66fd26893a6cdd
+- https://zenn.dev/ysksatoo/articles/66fd26893a6cdd (Notion連携について)
+- https://qiita.com/har1101/items/40c33d1f32dc9d4b3dc8 (NotionDB IDについて)
