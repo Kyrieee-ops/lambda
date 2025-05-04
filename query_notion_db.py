@@ -9,8 +9,12 @@ def lambda_handler(event, context):
     try:
         # 環境変数からトークンを取得
         notion_token = os.getenv('NOTION_TOKEN')
+        notion_db_id = os.getenv('NOTION_DB_ID')
         if not notion_token:
             raise ValueError("Notion token not found in environment variables")
+        if not notion_db_id:
+            raise ValueError("Notion database ID not found in environment variables")
+
 
         # Notionクライアントの初期化
         notion = Client(auth=notion_token)
@@ -18,7 +22,7 @@ def lambda_handler(event, context):
 
         # 対象のNotionDBかをクエリしてデータを取得
         db = notion.databases.query(
-            database_id='NOTION_DB_ID'
+            database_id=notion_db_id
         )
 
         return query_notion_db(db)
@@ -64,3 +68,4 @@ def query_notion_db(db):
             "data": pages_data  # 全データをJSON形式で返す
         }
     }
+
